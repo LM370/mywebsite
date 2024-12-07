@@ -54,7 +54,21 @@
             h1, h2, h3, p {
                 margin-bottom: 10px;
             }
+
+            /* Social media icons */
+            .social-icons i {
+                margin: 0 10px;
+                font-size: 24px;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .social-icons i:hover {
+                color: #333;
+            }
         </style>
+        <!-- Font Awesome for social media icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -70,9 +84,7 @@
             <h3>Some More About Me</h3>
             <p>
                 I enjoy creating content and exploring new games.
-                 
                 <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
-
                 Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
             </p>
 
@@ -86,6 +98,23 @@
                 <option value="2">Yeah Yeah Utah</option>
                 <option value="3">Green Call Her Sims</option>
             </select>
+
+            <!-- Social Media Links Section -->
+            <h3>Connect with me</h3>
+            <div class="social-icons">
+                <a href="https://twitter.com/yourusername" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/yourusername" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/c/yourchannel" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.github.com/yourusername" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
 
         <script>
