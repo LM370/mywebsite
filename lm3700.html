@@ -15,6 +15,14 @@
         <button id="playMusicButton">Play Music</button>
         <button id="shuffleButton">Shuffle Music</button>
         <button id="nextSongButton">Next Song</button>
+        
+        <h3>Select a Song</h3>
+        <select id="songSelect">
+            <option value="0">4044 Going For A Walk</option>
+            <option value="1">4137 The Best Part</option>
+            <option value="2">Yeah Yeah Utah</option>
+            <option value="3">Green Call Her Sims</option>
+        </select>
 
         <script>
             // Array of music file paths
@@ -46,18 +54,4 @@
             }
 
             // Event listener to play/pause music when "Play Music" button is clicked
-            document.getElementById('playMusicButton').addEventListener('click', function() {
-                if (audio.paused) {
-                    playTrack(currentTrackIndex);  // Play the current track
-                } else {
-                    audio.pause();  // Pause the music
-                }
-            });
-
-            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
-            document.getElementById('shuffleButton').addEventListener('click', function() {
-                playRandomTrack();  // Play a random track
-            });
-
-            // Event listener to go to the next song when "Next Song" button is clicked
-            document.getElementById('nextSongButton').addEventListener('click', function() 
+            document.getElementById('playMusicButton').addEven
