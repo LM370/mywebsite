@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LM1's Website</title>
+    </head>
+    <body>
+        <h1>
+            Hello World, I'm LM1
+        </h1>
+        <h2>About me</h2>
+        <p>
+            Video Games, Content Creation & Many Hobbies to Count
+        </p>
+
+        <script>
+            // Array of music file paths
+            const musicTracks = [
+                'Music/4044 Going For A Walk.mp3',
+                'Music/4137 The Best Part.mp3',
+                'Music/Yeah Yeah Utah.mp3',
+                'Music/Green Call Her Sims.mp3'
+            ];
+
+            // Pick a random track
+            const randomTrack = musicTracks[Math.floor(Math.random() * musicTracks.length)];
+
+            // Create an audio element and play the random track
+            const audio = document.createElement('audio');
+            audio.src = randomTrack;
+            audio.autoplay = true;
+            audio.loop = true; // Optional: Remove if you don't want looping
+            audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+
+            // Append the audio element to the body (optional)
+            document.body.appendChild(audio);
+        </script>
+    </body>
+</html>
