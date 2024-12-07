@@ -85,51 +85,35 @@
             .extra-section ul {
                 list-style-type: none;
                 padding: 0;
-                display: flex;
-                flex-wrap: wrap; /* Allow the items to wrap to the next line if necessary */
-                justify-content: center; /* Center the items */
             }
 
             .extra-section li {
                 background-color: #fff;
-                margin: 10px;
+                margin: 10px 0;
                 padding: 10px;
                 border-radius: 5px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                width: 250px; /* Limit the width of each item */
-            }
-
-            .extra-section img {
-                width: 100%; /* Make the image fill the container */
-                border-radius: 5px;
-                margin-bottom: 10px; /* Space between image and title */
-            }
-
-            .extra-section h3 {
-                font-size: 18px;
-                margin-bottom: 5px;
-            }
-
-            .extra-section p {
-                font-size: 14px;
-                color: #555;
             }
         </style>
         <!-- Font Awesome for social media icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
     <body>
-        <!-- About Me Section -->
         <div class="container">
-            <h1>Hello World, I'm LM1</h1>
+            <h1>
+                Hello World, I'm LM1
+            </h1>
             <h2>About me</h2>
-            <p>Video Games, Content Creation, Programming & Many Hobbies to Count.</p>
+            <p>
+                Video Games, Content Creation, Programming & Many Hobbies to Count.
+            </p>
 
             <!-- Additional text section -->
             <h3>Some More About Me</h3>
             <p>
-                I enjoy creating content and exploring new games. <u>Video Games</u> is a big part of me and I'm always experimenting with different games. Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
+                I enjoy creating content and exploring new games.
+                <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
+                Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
             </p>
 
             <button id="playMusicButton">Play Music</button>
@@ -164,84 +148,66 @@
             </div>
         </div>
 
-         <!-- New Extra Section for Movies & TV Shows with Images -->
-    <div class="container extra-section">
-        <h2>Movies & TV Shows I've Watched</h2>
-        <ul>
-            <li>
-                <img src="Photos/MV5BOTg4NTBiZDAtZTc0YS00NzZlLTg4Y2ItNGQ3M2ZlMDM5MWQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mr. Robot">
-                <h3>Mr. Robot</h3>
-                <p>A mind-bending show with a unique perspective on reality.</p>
-            </li>
-            <li>
-                <img src="Photos/Cry_of_Fear.jpg" alt="Cry Of Fear">
-                <h3>Cry Of Fear</h3>
-                <p>A dark, Horror Experience that Gave So Much Fun.</p>
-            </li>
-            <li>
-                <img src="Photos/download.jpg" alt="Barry">
-                <h3>Barry</h3>
-                <p>A thrilling comdic crime show.</p>
-            </li>
-            <li>
-                <img src="Photos/images.jpg" alt="This Is The Police">
-                <h3>This Is The Police</h3>
-                <p>A dark series about corruption and crime.</p>
-            </li>
-            <li>
-                <img src="Photos/images (1).jpg" alt="Red Dead Redemption 2">
-                <h3>Red Dead Redemption 2</h3>
-                <p>A cinematic experience of the wild west.</p>
-            </li>
-        </ul>
-    </div>
-        
+        <!-- New Extra Section for Movies & TV Shows -->
+        <div class="container extra-section">
+            <h2>Movies & TV Shows I've Watched</h2>
+            <ul>
+                <li>Mr. Robot - A mind-bending show with a unique perspective on reality.</li>
+                <li>Breaking Bad - A gripping story of transformation and crime.</li>
+                <li>Stranger Things - A thrilling mix of science fiction and nostalgia.</li>
+                <li>The Witcher - A dark fantasy series filled with magic and intrigue.</li>
+                <li>Red Dead Redemption 2 (Game) - A cinematic experience of the wild west.</li>
+            </ul>
+        </div>
+
         <script>
-        // Array of music file paths
-const musicTracks = [
-    'Music/4044 Going For A Walk.mp3',
-    'Music/4137 The Best Part.mp3',
-    'Music/Yeah Yeah Utah.mp3',
-    'Music/Green Call Her Sims.mp3'
-];
+            // Array of music file paths
+            const musicTracks = [
+                'Music/4044 Going For A Walk.mp3',
+                'Music/4137 The Best Part.mp3',
+                'Music/Yeah Yeah Utah.mp3',
+                'Music/Green Call Her Sims.mp3'
+            ];
 
-// Create an audio element (one instance only)
-const audio = new Audio();
-audio.loop = true; // Optional: Remove if you don't want looping
-audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+            // Create an audio element
+            const audio = document.createElement('audio');
+            audio.loop = true; // Optional: Remove if you don't want looping
+            audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
 
-// Variable to track the current track index
-let currentTrackIndex = 0;
+            // Variable to track the current track index
+            let currentTrackIndex = 0;
 
-// Function to play a specific track
-function playTrack(index) {
-    audio.src = musicTracks[index];
-    audio.play().catch(err => console.log("Error playing audio: " + err));
-}
+            // Function to play a specific track
+            function playTrack(index) {
+                audio.src = musicTracks[index];
+                audio.play().catch(err => console.log("Error playing audio: " + err));
+            }
 
-// Function to play a random track
-function playRandomTrack() {
-    currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-    playTrack(currentTrackIndex);
-}
+            // Function to play a random track
+            function playRandomTrack() {
+                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+                playTrack(currentTrackIndex);
+            }
 
-// Event listener to play/pause music when "Play Music" button is clicked
-document.getElementById('playMusicButton').addEventListener('click', function() {
-    if (audio.paused) {
-        playTrack(currentTrackIndex);  // Play the current track
-    } else {
-        audio.pause();  // Pause the music if it's playing
-    }
-});
+            // Event listener to play/pause music when "Play Music" button is clicked
+            document.getElementById('playMusicButton').addEventListener('click', function() {
+                if (audio.paused) {
+                    playTrack(currentTrackIndex);  // Play the current track
+                } else {
+                    audio.pause();  // Pause the music
+                }
+            });
 
-// Event listener to change song when a new selection is made from the dropdown
-document.getElementById('songSelect').addEventListener('change', function(event) {
-    const selectedSongIndex = event.target.value;
-    currentTrackIndex = selectedSongIndex;
-    playTrack(currentTrackIndex); // Play the selected song
-});
+            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
+            document.getElementById('shuffleButton').addEventListener('click', function() {
+                playRandomTrack();  // Play a random track
+            });
 
-// Event listener for the Shuffle Music button
-document.getElementById('shuffleButton').addEventListener('click', function() {
-    playRandomTrack(); // Shuffle and play a random song
-});
+            // Event listener to play the song selected from the dropdown
+            document.getElementById('songSelect').addEventListener('change', function(event) {
+                currentTrackIndex = parseInt(event.target.value, 10); // Get the selected option's index
+                playTrack(currentTrackIndex);  // Play the selected track
+            });
+        </script>
+    </body>
+</html>
