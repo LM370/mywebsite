@@ -7,12 +7,13 @@
             body {
                 display: flex;
                 justify-content: center; /* Center horizontally */
-                align-items: center; /* Center vertically */
-                height: 100vh; /* Make the body take the full height of the viewport */
+                align-items: flex-start; /* Start the content from the top */
+                min-height: 100vh; /* Ensure the body takes full height of the viewport */
                 margin: 0; /* Remove default margin */
                 font-family: Arial, sans-serif; /* Optional: set a nice font */
                 background-color: #f0f0f0; /* Optional: add a background color */
                 flex-direction: column; /* Allow sections to stack vertically */
+                padding: 20px; /* Add some padding to the body */
             }
 
             /* Centering the content inside the body */
@@ -227,16 +228,4 @@
             // Function to play a random track
             function playRandomTrack() {
                 currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-                playTrack(currentTrackIndex);
-            }
-
-            // Event listener to play/pause music when "Play Music" button is clicked
-            document.getElementById('playMusicButton').addEventListener('click', function() {
-                if (audio.paused) {
-                    playTrack(currentTrackIndex);  // Play the current track
-                } else {
-                    audio.pause();  // Pause the music
-                }
-            });
-
-            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
+                playTrack(currentTrackIndex
