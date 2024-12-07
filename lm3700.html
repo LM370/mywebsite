@@ -13,6 +13,7 @@
         </p>
 
         <button id="playMusicButton">Play Music</button>
+        <button id="shuffleButton">Shuffle Music</button>
 
         <script>
             // Array of music file paths
@@ -23,18 +24,30 @@
                 'Music/Green Call Her Sims.mp3'
             ];
 
-            // Pick a random track
-            const randomTrack = musicTracks[Math.floor(Math.random() * musicTracks.length)];
-
-            // Create an audio element (but do not autoplay initially)
+            // Create an audio element
             const audio = document.createElement('audio');
-            audio.src = randomTrack;
             audio.loop = true; // Optional: Remove if you don't want looping
             audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
 
-            // Play music when the button is clicked
-            document.getElementById('playMusicButton').addEventListener('click', function() {
+            // Function to pick a random track
+            function playRandomTrack() {
+                const randomTrack = musicTracks[Math.floor(Math.random() * musicTracks.length)];
+                audio.src = randomTrack;
                 audio.play();
+            }
+
+            // Event listener to play music when "Play Music" button is clicked
+            document.getElementById('playMusicButton').addEventListener('click', function() {
+                if (audio.paused) {
+                    playRandomTrack();  // Play a random track if the music is paused
+                } else {
+                    audio.pause();  // Pause the music if it is playing
+                }
+            });
+
+            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
+            document.getElementById('shuffleButton').addEventListener('click', function() {
+                playRandomTrack();  // Play a random track from the list
             });
         </script>
     </body>
