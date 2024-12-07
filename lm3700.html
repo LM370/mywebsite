@@ -1,227 +1,213 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>LM1's Website</title>
-    <style>
-        /* Apply flexbox to the body to center everything */
-        body {
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Make the body take the full height of the viewport */
-            margin: 0; /* Remove default margin */
-            font-family: Arial, sans-serif; /* Optional: set a nice font */
-            background-color: #f0f0f0; /* Optional: add a background color */
-            flex-direction: column; /* Allow sections to stack vertically */
-            text-align: center; /* Center text inside the body */
-        }
+    <head>
+        <title>LM1's Website</title>
+        <style>
+            /* Apply flexbox to the body to center everything */
+            body {
+                display: flex;
+                justify-content: center; /* Center horizontally */
+                align-items: center; /* Center vertically */
+                height: 100vh; /* Make the body take the full height of the viewport */
+                margin: 0; /* Remove default margin */
+                font-family: Arial, sans-serif; /* Optional: set a nice font */
+                background-color: #f0f0f0; /* Optional: add a background color */
+                flex-direction: column; /* Allow sections to stack vertically */
+            }
 
-        /* Centering the content inside the container */
-        .container {
-            width: 80%; /* Set a width for the container */
-            max-width: 800px; /* Optional: limit max width */
-            padding: 20px; /* Add some padding around the content */
-            background-color: #fff; /* Optional: add a background color */
-            border-radius: 10px; /* Optional: add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
-            margin-bottom: 20px; /* Space between sections */
-            text-align: center; /* Ensure text is centered */
-        }
+            /* Centering the content inside the body */
+            .container {
+                text-align: center; /* Center the text inside the container */
+                padding: 20px; /* Add some padding around the content */
+                background-color: #fff; /* Optional: add a background color */
+                border-radius: 10px; /* Optional: add rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+                margin-bottom: 20px; /* Space between sections */
+                width: 80%; /* Make the container not too wide */
+            }
 
-        /* Style the buttons */
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            transition: background-color 0.3s;
-        }
+            /* Style the buttons */
+            button {
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #4CAF50;
+                color: white;
+                transition: background-color 0.3s;
+            }
 
-        /* Button hover effect */
-        button:hover {
-            background-color: #45a049;
-        }
+            /* Button hover effect */
+            button:hover {
+                background-color: #45a049;
+            }
 
-        /* Style the select element */
-        select {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
+            /* Style the select element */
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background-color: #f9f9f9;
+            }
 
-        /* Add some margin between the title and content */
-        h1, h2, h3, p {
-            margin-bottom: 10px;
-        }
+            /* Add some margin between the title and content */
+            h1, h2, h3, p {
+                margin-bottom: 10px;
+            }
 
-        /* Social media icons */
-        .social-icons i {
-            margin: 0 10px;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
+            /* Social media icons */
+            .social-icons i {
+                margin: 0 10px;
+                font-size: 24px;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
 
-        .social-icons i:hover {
-            color: #333;
-        }
+            .social-icons i:hover {
+                color: #333;
+            }
 
-        /* New section for movies and TV shows */
-        .extra-section {
-            background-color: #e9e9e9; /* Different background for the new section */
-            border-radius: 10px;
-            padding: 20px;
-            width: 80%; /* Same width as the main content */
-            max-width: 800px; /* Optional: limit max width */
-        }
+            /* New section for movies and TV shows */
+            .extra-section {
+                background-color: #e9e9e9; /* Different background for the new section */
+                border-radius: 10px;
+                padding: 20px;
+                width: 80%; /* Same width as the main content */
+            }
 
-        .extra-section h2 {
-            color: #333;
-        }
+            .extra-section h2 {
+                color: #333;
+            }
 
-        .extra-section ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap; /* Allow the items to wrap to the next line if necessary */
-            justify-content: center; /* Center the items */
-        }
+            .extra-section ul {
+                list-style-type: none;
+                padding: 0;
+            }
 
-        .extra-section li {
-            background-color: #fff;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 250px; /* Limit the width of each item */
-        }
+            .extra-section li {
+                background-color: #fff;
+                margin: 10px 0;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <!-- Font Awesome for social media icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Hello World, I'm LM1
+            </h1>
+            <h2>About me</h2>
+            <p>
+                Video Games, Content Creation, Programming & Many Hobbies to Count.
+            </p>
 
-        .extra-section img {
-            width: 100%; /* Make the image fill the container */
-            border-radius: 5px;
-            margin-bottom: 10px; /* Space between image and title */
-        }
+            <!-- Additional text section -->
+            <h3>Some More About Me</h3>
+            <p>
+                I enjoy creating content and exploring new games.
+                <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
+                Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
+            </p>
 
-        .extra-section h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
+            <button id="playMusicButton">Play Music</button>
+            <button id="shuffleButton">Shuffle Music</button>
+            
+            <h3>Select a Song</h3>
+            <select id="songSelect">
+                <option value="0">4044 Going For A Walk</option>
+                <option value="1">4137 The Best Part</option>
+                <option value="2">Yeah Yeah Utah</option>
+                <option value="3">Green Call Her Sims</option>
+            </select>
 
-        .extra-section p {
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
-    <!-- Font Awesome for social media icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1>Hello World, I'm LM1</h1>
-        <h2>About me</h2>
-        <p>Video Games, Content Creation, Programming & Many Hobbies to Count.</p>
-
-        <!-- Additional text section -->
-        <h3>Some More About Me</h3>
-        <p>
-            I enjoy creating content and exploring new games.
-            <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
-            Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
-        </p>
-
-        <button id="playMusicButton">Play Music</button>
-        <button id="shuffleButton">Shuffle Music</button>
-        
-        <h3>Select a Song</h3>
-        <select id="songSelect">
-            <option value="0">4044 Going For A Walk</option>
-            <option value="1">4137 The Best Part</option>
-            <option value="2">Yeah Yeah Utah</option>
-            <option value="3">Green Call Her Sims</option>
-        </select>
-
-        <!-- Social Media Links Section -->
-        <h3>Connect with me</h3>
-        <div class="social-icons">
-            <a href="https://x.com/tameem37001" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.tiktok.com/@.tgl1" target="_blank">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@LM3700" target="_blank">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://kick.com/lm3700" target="_blank">
-                <i class="fab fa-kick"></i>
-            </a>
-            <a href="https://www.twitch.tv/lm370" target="_blank">
-                <i class="fab fa-twitch"></i>
-            </a>
+            <!-- Social Media Links Section -->
+            <h3>Connect with me</h3>
+            <div class="social-icons">
+                <a href="https://x.com/tameem37001" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com/@.tgl1" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@LM3700" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://kick.com/lm3700" target="_blank">
+                    <i class="fab fa-kick"></i>
+                </a>
+                <a href="https://www.twitch.tv/lm370" target="_blank">
+                    <i class="fab fa-twitch"></i>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <!-- New Extra Section for Movies & TV Shows with Images -->
-    <div class="container extra-section">
-        <h2>Movies & TV Shows I've Watched</h2>
-        <ul>
-            <li>
-                <img src="Photos/MV5BOTg4NTBiZDAtZTc0YS00NzZlLTg4Y2ItNGQ3M2ZlMDM5MWQzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mr. Robot">
-                <h3>Mr. Robot</h3>
-                <p>A mind-bending show with a unique perspective on reality.</p>
-            </li>
-            <li>
-                <img src="Photos/Cry_of_Fear.jpg" alt="Cry Of Fear">
-                <h3>Cry Of Fear</h3>
-                <p>A dark, Horror Experience that Gave So Much Fun.</p>
-            </li>
-            <li>
-                <img src="Photos/download.jpg" alt="Barry">
-                <h3>Barry</h3>
-                <p>A thrilling comdic crime show.</p>
-            </li>
-            <li>
-                <img src="Photos/images.jpg" alt="This Is The Police">
-                <h3>This Is The Police</h3>
-                <p>A dark series about corruption and crime.</p>
-            </li>
-            <li>
-                <img src="Photos/images (1).jpg" alt="Red Dead Redemption 2">
-                <h3>Red Dead Redemption 2</h3>
-                <p>A cinematic experience of the wild west.</p>
-            </li>
-        </ul>
-    </div>
+        <!-- New Extra Section for Movies & TV Shows -->
+        <div class="container extra-section">
+            <h2>Movies & TV Shows I've Watched</h2>
+            <ul>
+                <li>Mr. Robot - A mind-bending show with a unique perspective on reality.</li>
+                <li>Breaking Bad - A gripping story of transformation and crime.</li>
+                <li>Stranger Things - A thrilling mix of science fiction and nostalgia.</li>
+                <li>The Witcher - A dark fantasy series filled with magic and intrigue.</li>
+                <li>Red Dead Redemption 2 (Game) - A cinematic experience of the wild west.</li>
+            </ul>
+        </div>
 
-    <script>
-        // Array of music file paths
-        const musicTracks = [
-            'Music/4044 Going For A Walk.mp3',
-            'Music/4137 The Best Part.mp3',
-            'Music/Yeah Yeah Utah.mp3',
-            'Music/Green Call Her Sims.mp3'
-        ];
+        <script>
+            // Array of music file paths
+            const musicTracks = [
+                'Music/4044 Going For A Walk.mp3',
+                'Music/4137 The Best Part.mp3',
+                'Music/Yeah Yeah Utah.mp3',
+                'Music/Green Call Her Sims.mp3'
+            ];
 
-        // Create an audio element
-        const audio = document.createElement('audio');
-        audio.loop = true; // Optional: Remove if you don't want looping
-        audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+            // Create an audio element
+            const audio = document.createElement('audio');
+            audio.loop = true; // Optional: Remove if you don't want looping
+            audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
 
-        // Variable to track the current track index
-        let currentTrackIndex = 0;
+            // Variable to track the current track index
+            let currentTrackIndex = 0;
 
-        // Function to play a specific track
-        function playTrack(index) {
-            audio.src = musicTracks[index];
-            audio.play().catch(err => console.log("Error playing audio: " + err));
-        }
+            // Function to play a specific track
+            function playTrack(index) {
+                audio.src = musicTracks[index];
+                audio.play().catch(err => console.log("Error playing audio: " + err));
+            }
 
-        // Function to play a random track
-        function playRandom
+            // Function to play a random track
+            function playRandomTrack() {
+                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+                playTrack(currentTrackIndex);
+            }
+
+            // Event listener to play/pause music when "Play Music" button is clicked
+            document.getElementById('playMusicButton').addEventListener('click', function() {
+                if (audio.paused) {
+                    playTrack(currentTrackIndex);  // Play the current track
+                } else {
+                    audio.pause();  // Pause the music
+                }
+            });
+
+            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
+            document.getElementById('shuffleButton').addEventListener('click', function() {
+                playRandomTrack();  // Play a random track
+            });
+
+            // Event listener to play the song selected from the dropdown
+            document.getElementById('songSelect').addEventListener('change', function(event) {
+                currentTrackIndex = parseInt(event.target.value, 10); // Get the selected option's index
+                playTrack(currentTrackIndex);  // Play the selected track
+            });
+        </script>
+    </body>
+</html>
