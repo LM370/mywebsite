@@ -94,6 +94,23 @@
                 border-radius: 5px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
+
+            /* Link button for the Movies & TV Shows page */
+            .link-button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .link-button:hover {
+                background-color: #45a049;
+            }
         </style>
         <!-- Font Awesome for social media icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -127,6 +144,9 @@
                 <option value="3">Green Call Her Sims</option>
             </select>
 
+            <!-- Link button to redirect to the Movies & TV Shows page -->
+            <a href="games-tv-shows.html" class="link-button">Check Out My Favorite Games & TV Shows</a>
+
             <!-- Social Media Links Section -->
             <h3>Connect with me</h3>
             <div class="social-icons">
@@ -147,19 +167,7 @@
                 </a>
             </div>
         </div>
-
-        <!-- New Extra Section for Movies & TV Shows -->
-        <div class="container extra-section">
-            <h2>Movies & TV Shows I've Watched</h2>
-            <ul>
-                <li>Mr. Robot - A mind-bending show with a unique perspective on reality.</li>
-                <li>Breaking Bad - A gripping story of transformation and crime.</li>
-                <li>Stranger Things - A thrilling mix of science fiction and nostalgia.</li>
-                <li>The Witcher - A dark fantasy series filled with magic and intrigue.</li>
-                <li>Red Dead Redemption 2 (Game) - A cinematic experience of the wild west.</li>
-            </ul>
-        </div>
-
+        
         <script>
             // Array of music file paths
             const musicTracks = [
