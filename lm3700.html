@@ -85,35 +85,51 @@
             .extra-section ul {
                 list-style-type: none;
                 padding: 0;
+                display: flex;
+                flex-wrap: wrap; /* Allow the items to wrap to the next line if necessary */
+                justify-content: center; /* Center the items */
             }
 
             .extra-section li {
                 background-color: #fff;
-                margin: 10px 0;
+                margin: 10px;
                 padding: 10px;
                 border-radius: 5px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 250px; /* Limit the width of each item */
+            }
+
+            .extra-section img {
+                width: 100%; /* Make the image fill the container */
+                border-radius: 5px;
+                margin-bottom: 10px; /* Space between image and title */
+            }
+
+            .extra-section h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .extra-section p {
+                font-size: 14px;
+                color: #555;
             }
         </style>
         <!-- Font Awesome for social media icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
     <body>
+        <!-- About Me Section -->
         <div class="container">
-            <h1>
-                Hello World, I'm LM1
-            </h1>
+            <h1>Hello World, I'm LM1</h1>
             <h2>About me</h2>
-            <p>
-                Video Games, Content Creation, Programming & Many Hobbies to Count.
-            </p>
+            <p>Video Games, Content Creation, Programming & Many Hobbies to Count.</p>
 
             <!-- Additional text section -->
             <h3>Some More About Me</h3>
             <p>
-                I enjoy creating content and exploring new games.
-                <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
-                Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
+                I enjoy creating content and exploring new games. <u>Video Games</u> is a big part of me and I'm always experimenting with different games. Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
             </p>
 
             <button id="playMusicButton">Play Music</button>
@@ -148,15 +164,35 @@
             </div>
         </div>
 
-        <!-- New Extra Section for Movies & TV Shows -->
+        <!-- Movies & TV Shows Section -->
         <div class="container extra-section">
             <h2>Movies & TV Shows I've Watched</h2>
             <ul>
-                <li>Mr. Robot - A mind-bending show with a unique perspective on reality.</li>
-                <li>Breaking Bad - A gripping story of transformation and crime.</li>
-                <li>Stranger Things - A thrilling mix of science fiction and nostalgia.</li>
-                <li>The Witcher - A dark fantasy series filled with magic and intrigue.</li>
-                <li>Red Dead Redemption 2 (Game) - A cinematic experience of the wild west.</li>
+                <li>
+                    <img src="images/mr-robot.jpg" alt="Mr. Robot">
+                    <h3>Mr. Robot</h3>
+                    <p>A mind-bending show with a unique perspective on reality.</p>
+                </li>
+                <li>
+                    <img src="images/breaking-bad.jpg" alt="Breaking Bad">
+                    <h3>Breaking Bad</h3>
+                    <p>A gripping story of transformation and crime.</p>
+                </li>
+                <li>
+                    <img src="images/stranger-things.jpg" alt="Stranger Things">
+                    <h3>Stranger Things</h3>
+                    <p>A thrilling mix of science fiction and nostalgia.</p>
+                </li>
+                <li>
+                    <img src="images/the-witcher.jpg" alt="The Witcher">
+                    <h3>The Witcher</h3>
+                    <p>A dark fantasy series filled with magic and intrigue.</p>
+                </li>
+                <li>
+                    <img src="images/red-dead-redemption.jpg" alt="Red Dead Redemption 2">
+                    <h3>Red Dead Redemption 2</h3>
+                    <p>A cinematic experience of the wild west.</p>
+                </li>
             </ul>
         </div>
 
@@ -194,20 +230,4 @@
                 if (audio.paused) {
                     playTrack(currentTrackIndex);  // Play the current track
                 } else {
-                    audio.pause();  // Pause the music
-                }
-            });
-
-            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
-            document.getElementById('shuffleButton').addEventListener('click', function() {
-                playRandomTrack();  // Play a random track
-            });
-
-            // Event listener to play the song selected from the dropdown
-            document.getElementById('songSelect').addEventListener('change', function(event) {
-                currentTrackIndex = parseInt(event.target.value, 10); // Get the selected option's index
-                playTrack(currentTrackIndex);  // Play the selected track
-            });
-        </script>
-    </body>
-</html>
+                    audio.pause();  //
