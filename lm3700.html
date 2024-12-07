@@ -197,37 +197,51 @@
     </div>
         
         <script>
-            // Array of music file paths
-            const musicTracks = [
-                'Music/4044 Going For A Walk.mp3',
-                'Music/4137 The Best Part.mp3',
-                'Music/Yeah Yeah Utah.mp3',
-                'Music/Green Call Her Sims.mp3'
-            ];
+        // Array of music file paths
+const musicTracks = [
+    'Music/4044 Going For A Walk.mp3',
+    'Music/4137 The Best Part.mp3',
+    'Music/Yeah Yeah Utah.mp3',
+    'Music/Green Call Her Sims.mp3'
+];
 
-            // Create an audio element
-            const audio = document.createElement('audio');
-            audio.loop = true; // Optional: Remove if you don't want looping
-            audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+// Create an audio element (one instance only)
+const audio = new Audio();
+audio.loop = true; // Optional: Remove if you don't want looping
+audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
 
-            // Variable to track the current track index
-            let currentTrackIndex = 0;
+// Variable to track the current track index
+let currentTrackIndex = 0;
 
-            // Function to play a specific track
-            function playTrack(index) {
-                audio.src = musicTracks[index];
-                audio.play().catch(err => console.log("Error playing audio: " + err));
-            }
+// Function to play a specific track
+function playTrack(index) {
+    audio.src = musicTracks[index];
+    audio.play().catch(err => console.log("Error playing audio: " + err));
+}
 
-            // Function to play a random track
-            function playRandomTrack() {
-                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-                playTrack(currentTrackIndex);
-            }
+// Function to play a random track
+function playRandomTrack() {
+    currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+    playTrack(currentTrackIndex);
+}
 
-            // Event listener to play/pause music when "Play Music" button is clicked
-            document.getElementById('playMusicButton').addEventListener('click', function() {
-                if (audio.paused) {
-                    playTrack(currentTrackIndex);  // Play the current track
-                } else {
-                    audio.pause();  //
+// Event listener to play/pause music when "Play Music" button is clicked
+document.getElementById('playMusicButton').addEventListener('click', function() {
+    if (audio.paused) {
+        playTrack(currentTrackIndex);  // Play the current track
+    } else {
+        audio.pause();  // Pause the music if it's playing
+    }
+});
+
+// Event listener to change song when a new selection is made from the dropdown
+document.getElementById('songSelect').addEventListener('change', function(event) {
+    const selectedSongIndex = event.target.value;
+    currentTrackIndex = selectedSongIndex;
+    playTrack(currentTrackIndex); // Play the selected song
+});
+
+// Event listener for the Shuffle Music button
+document.getElementById('shuffleButton').addEventListener('click', function() {
+    playRandomTrack(); // Shuffle and play a random song
+});
