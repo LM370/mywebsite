@@ -7,24 +7,24 @@
             body {
                 display: flex;
                 justify-content: center; /* Center horizontally */
-                align-items: flex-start; /* Start the content from the top */
-                min-height: 100vh; /* Ensure the body takes full height of the viewport */
+                align-items: center; /* Center vertically */
+                height: 100vh; /* Make the body take the full height of the viewport */
                 margin: 0; /* Remove default margin */
                 font-family: Arial, sans-serif; /* Optional: set a nice font */
                 background-color: #f0f0f0; /* Optional: add a background color */
                 flex-direction: column; /* Allow sections to stack vertically */
-                padding: 20px; /* Add some padding to the body */
+                text-align: center; /* Center text inside the body */
             }
 
-            /* Centering the content inside the body */
+            /* Centering the content inside the container */
             .container {
-                text-align: center; /* Center the text inside the container */
+                width: 80%; /* Set a width for the container */
+                max-width: 800px; /* Optional: limit max width */
                 padding: 20px; /* Add some padding around the content */
                 background-color: #fff; /* Optional: add a background color */
                 border-radius: 10px; /* Optional: add rounded corners */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
                 margin-bottom: 20px; /* Space between sections */
-                width: 80%; /* Make the container not too wide */
             }
 
             /* Style the buttons */
@@ -77,6 +77,7 @@
                 border-radius: 10px;
                 padding: 20px;
                 width: 80%; /* Same width as the main content */
+                max-width: 800px; /* Optional: limit max width */
             }
 
             .extra-section h2 {
@@ -227,5 +228,4 @@
 
             // Function to play a random track
             function playRandomTrack() {
-                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-                playTrack(currentTrackIndex
+                currentTrackIndex =
