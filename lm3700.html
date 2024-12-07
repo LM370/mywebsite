@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LM1's Website</title>
+    </head>
+    <body>
+        <h1>
+            Hello World, I'm LM1
+        </h1>
+        <h2>About me</h2>
+        <p>
+            Video Games, Content Creation & Many Hobbies to Count
+        </p>
+
+        <button id="playMusicButton">Play Music</button>
+        <button id="shuffleButton">Shuffle Music</button>
+        <button id="nextSongButton">Next Song</button>
+
+        <script>
+            // Array of music file paths
+            const musicTracks = [
+                'Music/4044 Going For A Walk.mp3',
+                'Music/4137 The Best Part.mp3',
+                'Music/Yeah Yeah Utah.mp3',
+                'Music/Green Call Her Sims.mp3'
+            ];
+
+            // Create an audio element
+            const audio = document.createElement('audio');
+            audio.loop = true; // Optional: Remove if you don't want looping
+            audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+
+            // Variable to track the current track index
+            let currentTrackIndex = 0;
+
+            // Function to play a specific track
+            function playTrack(index) {
+                audio.src = musicTracks[index];
+                audio.play();
+            }
+
+            // Function to play a random track
+            function playRandomTrack() {
+                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+                playTrack(currentTrackIndex);
+            }
+
+            // Event listener to play/pause music when "Play Music" button is clicked
+            document.getElementById('playMusicButton').addEventListener('click', function() {
+                if (audio.paused) {
+                    playTrack(currentTrackIndex);  // Play the current track
+                } else {
+                    audio.pause();  // Pause the music
+                }
+            });
+
+            // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
+            document.getElementById('shuffleButton').addEventListener('click', function() {
+                playRandomTrack();  // Play a random track
+            });
+
+            // Event listener to go to the next song when "Next Song" button is clicked
+            document.getElementById('nextSongButton').addEventListener('click', function() {
+                // Move to the next track, loop back to the start if at the end
+                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+                playTrack(currentTrackIndex);  // Play the next track
+            });
+        </script>
+    </body>
+</html>
