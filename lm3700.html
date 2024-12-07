@@ -15,6 +15,14 @@
         <button id="playMusicButton">Play Music</button>
         <button id="shuffleButton">Shuffle Music</button>
         <button id="nextSongButton">Next Song</button>
+        
+        <h3>Select a Song</h3>
+        <select id="songSelect">
+            <option value="0">4044 Going For A Walk</option>
+            <option value="1">4137 The Best Part</option>
+            <option value="2">Yeah Yeah Utah</option>
+            <option value="3">Green Call Her Sims</option>
+        </select>
 
         <script>
             // Array of music file paths
@@ -36,7 +44,7 @@
             // Function to play a specific track
             function playTrack(index) {
                 audio.src = musicTracks[index];
-                audio.play();
+                audio.play().catch(err => console.log("Error playing audio: " + err));
             }
 
             // Function to play a random track
@@ -65,6 +73,12 @@
                 currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
                 playTrack(currentTrackIndex);  // Play the next track
             });
+
+            // Event listener to play the song selected from the dropdown
+            document.getElementById('songSelect').addEventListener('change', function(event) {
+                currentTrackIndex = parseInt(event.target.value, 10); // Get the selected option's index
+                playTrack(currentTrackIndex);  // Play the selected track
+            });
         </script>
     </body>
-</html>
+<
