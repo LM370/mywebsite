@@ -2,26 +2,81 @@
 <html>
     <head>
         <title>LM1's Website</title>
+        <style>
+            /* Apply flexbox to the body to center everything */
+            body {
+                display: flex;
+                justify-content: center; /* Center horizontally */
+                align-items: center; /* Center vertically */
+                height: 100vh; /* Make the body take the full height of the viewport */
+                margin: 0; /* Remove default margin */
+                font-family: Arial, sans-serif; /* Optional: set a nice font */
+                background-color: #f0f0f0; /* Optional: add a background color */
+            }
+
+            /* Centering the content inside the body */
+            .container {
+                text-align: center; /* Center the text inside the container */
+                padding: 20px; /* Add some padding around the content */
+                background-color: #fff; /* Optional: add a background color */
+                border-radius: 10px; /* Optional: add rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+            }
+
+            /* Style the buttons */
+            button {
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #4CAF50;
+                color: white;
+                transition: background-color 0.3s;
+            }
+
+            /* Button hover effect */
+            button:hover {
+                background-color: #45a049;
+            }
+
+            /* Style the select element */
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                background-color: #f9f9f9;
+            }
+
+            /* Add some margin between the title and content */
+            h1, h2, h3, p {
+                margin-bottom: 10px;
+            }
+        </style>
     </head>
     <body>
-        <h1>
-            Hello World, I'm LM1
-        </h1>
-        <h2>About me</h2>
-        <p>
-            Video Games, Content Creation & Many Hobbies to Count
-        </p>
+        <div class="container">
+            <h1>
+                Hello World, I'm LM1
+            </h1>
+            <h2>About me</h2>
+            <p>
+                Video Games, Content Creation & Many Hobbies to Count
+            </p>
 
-        <button id="playMusicButton">Play Music</button>
-        <button id="shuffleButton">Shuffle Music</button>
-        
-        <h3>Select a Song</h3>
-        <select id="songSelect">
-            <option value="0">4044 Going For A Walk</option>
-            <option value="1">4137 The Best Part</option>
-            <option value="2">Yeah Yeah Utah</option>
-            <option value="3">Green Call Her Sims</option>
-        </select>
+            <button id="playMusicButton">Play Music</button>
+            <button id="shuffleButton">Shuffle Music</button>
+            
+            <h3>Select a Song</h3>
+            <select id="songSelect">
+                <option value="0">4044 Going For A Walk</option>
+                <option value="1">4137 The Best Part</option>
+                <option value="2">Yeah Yeah Utah</option>
+                <option value="3">Green Call Her Sims</option>
+            </select>
+        </div>
 
         <script>
             // Array of music file paths
