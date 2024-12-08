@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<html {
-     height: 100%;
-     margin: auto;
-     width: 960px;
-      }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LM1's Website</title>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* Apply flexbox to the body to center everything */
         body {
@@ -17,20 +14,20 @@
             align-items: center; /* Center vertically */
             height: 100vh; /* Make the body take the full height of the viewport */
             margin: 0; /* Remove default margin */
-            font-family: Arial, sans-serif; /* Optional: set a nice font */
-            background-color: #f0f0f0; /* Optional: add a background color */
-            flex-direction: column; /* Allow sections to stack vertically */
+            font-family: Arial, sans-serif; /* Set font */
+            background-color: #f0f0f0; /* Add background color */
+            flex-direction: column; /* Stack content vertically */
         }
 
         /* Centering the content inside the body */
         .container {
-            text-align: center; /* Center the text inside the container */
-            padding: 20px; /* Add some padding around the content */
-            background-color: #fff; /* Optional: add a background color */
-            border-radius: 10px; /* Optional: add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+            text-align: center; /* Center the text */
+            padding: 20px; /* Padding around the content */
+            background-color: #fff; /* Background color */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             margin-bottom: 20px; /* Space between sections */
-            width: 80%; /* Make the container not too wide */
+            width: 80%; /* Responsive width */
         }
 
         /* Style the buttons */
@@ -51,6 +48,21 @@
             background-color: #45a049;
         }
 
+        /* Social icons */
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .social-icons i {
+            font-size: 24px;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
         /* Section for future pages */
         .pages-section {
             width: 80%;
@@ -63,23 +75,21 @@
     </style>
 </head>
 <body>
+    <!-- Main Content -->
     <div class="container">
-        <h1>
-            Hello World, I'm LM1
-        </h1>
-        <h2>About me</h2>
-        <p>
-            Video Games, Content Creation, Programming & Many Hobbies to Count.
-        </p>
+        <h1>Hello World, I'm LM1</h1>
+        <h2>About Me</h2>
+        <p>Video Games, Content Creation, Programming & Many Hobbies to Count.</p>
 
-        <!-- Additional text section -->
+        <!-- Additional About Me Section -->
         <h3>Some More About Me</h3>
         <p>
             I enjoy creating content and exploring new games.
-            <u>Video Games</u> is a big part of me and I'm always experimenting with different games.
+            <u>Video Games</u> is a big part of me, and I'm always experimenting with different games.
             Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
         </p>
 
+        <!-- Music Controls -->
         <button id="playMusicButton">Play Music</button>
         <button id="shuffleButton">Shuffle Music</button>
 
@@ -93,7 +103,7 @@
         </select>
 
         <!-- Social Media Links Section -->
-        <h3>Connect with me</h3>
+        <h3>Connect with Me</h3>
         <div class="social-icons">
             <a href="https://x.com/tameem37001" target="_blank">
                 <i class="fab fa-twitter"></i>
@@ -105,7 +115,7 @@
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://kick.com/lm3700" target="_blank">
-                <i class="fab fa-kick"></i>
+                <img src="path-to-kick-logo.png" alt="Kick Logo">
             </a>
             <a href="https://www.twitch.tv/lm370" target="_blank">
                 <i class="fab fa-twitch"></i>
@@ -113,11 +123,10 @@
         </div>
     </div>
 
-    <!-- New Section for Future Pages -->
+    <!-- Section for Future Pages -->
     <div class="container pages-section">
         <h2>Explore More</h2>
         <button onclick="window.location.href='games-tv-shows.html'">Games & TV Shows</button>
-        <!-- Add more buttons for future pages here -->
     </div>
 
     <script>
@@ -130,44 +139,32 @@
             'Music/Your Graduation.mp3'
         ];
 
-        // Create an audio element
         const audio = document.createElement('audio');
-        audio.loop = true; // Optional: Remove if you don't want looping
-        audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+        audio.loop = true;
+        audio.volume = 0.5;
 
-        // Variable to track the current track index
         let currentTrackIndex = 0;
 
-        // Function to play a specific track
         function playTrack(index) {
             audio.src = musicTracks[index];
-            audio.play().catch(err => console.log("Error playing audio: " + err));
+            audio.play().catch(err => console.error("Error playing audio:", err));
         }
 
-        // Function to play a random track
         function playRandomTrack() {
             currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
             playTrack(currentTrackIndex);
         }
 
-        // Event listener to play/pause music when "Play Music" button is clicked
-        document.getElementById('playMusicButton').addEventListener('click', function() {
-            if (audio.paused) {
-                playTrack(currentTrackIndex);  // Play the current track
-            } else {
-                audio.pause();  // Pause the music
-            }
+        document.getElementById('playMusicButton').addEventListener('click', () => {
+            if (audio.paused) playTrack(currentTrackIndex);
+            else audio.pause();
         });
 
-        // Event listener to shuffle through tracks when "Shuffle Music" button is clicked
-        document.getElementById('shuffleButton').addEventListener('click', function() {
-            playRandomTrack();  // Play a random track
-        });
+        document.getElementById('shuffleButton').addEventListener('click', playRandomTrack);
 
-        // Event listener to play the song selected from the dropdown
-        document.getElementById('songSelect').addEventListener('change', function(event) {
-            currentTrackIndex = parseInt(event.target.value, 10); // Get the selected option's index
-            playTrack(currentTrackIndex);  // Play the selected track
+        document.getElementById('songSelect').addEventListener('change', (e) => {
+            currentTrackIndex = parseInt(e.target.value, 10);
+            playTrack(currentTrackIndex);
         });
     </script>
 </body>
