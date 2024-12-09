@@ -89,19 +89,6 @@
             Right now, I'm more into my <u>Goals in YouTube & Programming</u>.
         </p>
 
-        <!-- Music Controls -->
-        <button id="playMusicButton">Play Music</button>
-        <button id="shuffleButton">Shuffle Music</button>
-
-        <h3>Select a Song</h3>
-        <select id="songSelect">
-            <option value="0">4044 Going For A Walk</option>
-            <option value="1">4137 The Best Part</option>
-            <option value="2">Yeah Yeah Utah</option>
-            <option value="3">Green Call Her Sims</option>
-            <option value="4">Your Graduation</option>
-        </select>
-
         <!-- Social Media Links Section -->
         <h3>Connect with Me</h3>
         <div class="social-icons">
@@ -115,7 +102,7 @@
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://kick.com/lm3700" target="_blank">
-                <img src="Photos/brand-kick-icon-1024x1024-g45axn7f.png" alt="Kick Logo">
+                <img src="path-to-kick-logo.png" alt="Kick Logo">
             </a>
             <a href="https://www.twitch.tv/lm370" target="_blank">
                 <i class="fab fa-twitch"></i>
@@ -128,44 +115,5 @@
         <h2>Explore More</h2>
         <button onclick="window.location.href='games-tv-shows.html'">Games & TV Shows</button>
     </div>
-
-    <script>
-        // Array of music file paths
-        const musicTracks = [
-            'Music/4044 Going For A Walk.mp3',
-            'Music/4137 The Best Part.mp3',
-            'Music/Yeah Yeah Utah.mp3',
-            'Music/Green Call Her Sims.mp3',
-            'Music/Your Graduation.mp3'
-        ];
-
-        const audio = document.createElement('audio');
-        audio.loop = true;
-        audio.volume = 0.5;
-
-        let currentTrackIndex = 0;
-
-        function playTrack(index) {
-            audio.src = musicTracks[index];
-            audio.play().catch(err => console.error("Error playing audio:", err));
-        }
-
-        function playRandomTrack() {
-            currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-            playTrack(currentTrackIndex);
-        }
-
-        document.getElementById('playMusicButton').addEventListener('click', () => {
-            if (audio.paused) playTrack(currentTrackIndex);
-            else audio.pause();
-        });
-
-        document.getElementById('shuffleButton').addEventListener('click', playRandomTrack);
-
-        document.getElementById('songSelect').addEventListener('change', (e) => {
-            currentTrackIndex = parseInt(e.target.value, 10);
-            playTrack(currentTrackIndex);
-        });
-    </script>
 </body>
 </html>
