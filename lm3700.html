@@ -1,119 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع LM1 الرسمي</title>
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Apply flexbox to the body to center everything */
-        body {
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Make the body take the full height of the viewport */
-            margin: 0; /* Remove default margin */
-            font-family: Arial, sans-serif; /* Set font */
-            background-color: #f0f0f0; /* Add background color */
-            flex-direction: column; /* Stack content vertically */
-        }
-
-        /* Centering the content inside the body */
-        .container {
-            text-align: center; /* Center the text */
-            padding: 20px; /* Padding around the content */
-            background-color: #fff; /* Background color */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            margin-bottom: 20px; /* Space between sections */
-            width: 80%; /* Responsive width */
-        }
-
-        /* Style the buttons */
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        /* Button hover effect */
-        button:hover {
-            background-color: #45a049;
-        }
-
-        /* Social icons */
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: inherit;
-        }
-        .social-icons i {
-            font-size: 24px;
-        }
-        .social-icons img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-
-        /* Section for future pages */
-        .pages-section {
-            width: 80%;
-            margin-top: 20px;
-        }
-
-        .pages-section h2 {
-            margin-bottom: 15px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع LM1</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4A90E2',secondary:'#6B7280'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Tajawal', sans-serif;
+background-color: #F5F7FA;
+color: #333333;
+line-height: 1.6;
+}
+.container {
+max-width: 1024px;
+margin: 0 auto;
+padding: 2rem;
+background-color: #FFFFFF;
+border-radius: 16px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.social-icon {
+transition: all 0.3s ease;
+}
+.social-icon:hover {
+transform: translateY(-3px);
+opacity: 0.8;
+}
+.divider {
+height: 1px;
+background: linear-gradient(to right, transparent, #E5E7EB, transparent);
+margin: 2rem 0;
+}
+a {
+color: #4A90E2;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+a:hover {
+color: #2563EB;
+}
+</style>
 </head>
-<body>
-    <!-- Main Content -->
-    <div class="container">
-        <h1>موقع LM1</h1>
-        <h2>عني</h2>
-        <p>العاب, صناعة محتوى, برمجو اشياء اكثر للعد</p>
-
-        <!-- Additional About Me Section -->
-        <h3>وصف لي</h3>
-        <p>
-            احب صناعة المحتوى, اجرب العاب جديدة كل شوي.
-            العاب جزء كبير مني (مع الاسف)
-            ولي خبرة في برمجة واجهة المواقع
-        </p>
-
-        <h3>موقع ذكر</h3>
-         <a href="https://aud-sa.github.io/adhkar-app/" target="_blank">اذكار الصباح والمساء</a>
-        
-        <!-- Social Media Links Section -->
-        <h3>حساباتي</h3>
-        <div class="social-icons">
-            <a href="https://x.com/tameem37001" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.tiktok.com/@.tgl1" target="_blank">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@LM3700" target="_blank">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.instagram.com/lm37001/profilecard/?igsh=MW10em9nbnk3NjNtdw==" target="_blank">
-                <img src="Photos/IMG_7594.png" alt="Instagram Logo">
-            </a>
-            <a href="https://kick.com/lm3700" target="_blank">
-                <img src="Photos/brand-kick-icon-1024x1024-g45axn7f.png" alt="Kick Logo">
-            </a>
-            <a href="https://www.twitch.tv/lm370" target="_blank">
-                <i class="fab fa-twitch"></i>
-            </a>
-        </div>
-    </div>
+<body class="min-h-screen flex items-center justify-center p-4">
+<div class="container">
+<header class="text-center mb-10">
+<h1 class="text-3xl font-bold text-primary mb-1">موقع LM1</h1>
+<div class="w-20 h-1 bg-primary mx-auto rounded-full mb-6 opacity-70"></div>
+</header>
+<section class="mb-8 text-center">
+<h2 class="text-2xl font-bold mb-4 text-gray-800">عني</h2>
+<p class="text-gray-700 mb-6">أهلاً بك في صفحتي الشخصية! أنا تميم، مهتم بتطوير المحتوى الرقمي وتصميم تجارب المستخدم المميزة. أسعى دائماً لتقديم أفضل ما لدي من خبرات في مجال التقنية والتصميم.</p>
+</section>
+<div class="divider"></div>
+<section class="mb-8 text-center">
+<h2 class="text-2xl font-bold mb-4 text-gray-800">وصفي</h2>
+<p class="text-gray-700 mb-6">أحب مشاركة المعرفة في مجال التصميم والبرمجة، وأعمل حالياً على عدة مشاريع تقنية مثيرة. أهتم بتطوير مهاراتي باستمرار وأسعى للتعلم من التجارب الجديدة في مجال التكنولوجيا والابتكار الرقمي.</p>
+</section>
+<div class="divider"></div>
+<section class="mb-8 text-center">
+<h2 class="text-2xl font-bold mb-4 text-gray-800">أذكار الصباح والمساء</h2>
+<div class="flex flex-wrap gap-4 justify-center">
+<a href="https://aud-sa.github.io/adhkar-app/" target="_blank" class="px-6 py-3 bg-primary text-white rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap flex items-center gap-2">
+<i class="ri-book-open-line"></i>
+<span>الأذكار اليومية</span>
+</a>
+</div>
+</section>
+<div class="divider"></div>
+<section class="mb-8 text-center">
+<h2 class="text-2xl font-bold mb-6 text-gray-800">حسابي</h2>
+<div class="flex justify-center gap-6 flex-wrap">
+<a href="https://x.com/tameem37001" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-twitter-fill ri-lg text-gray-700"></i>
+</a>
+<a href="https://www.tiktok.com/@.tgl1" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-tiktok-fill ri-lg text-gray-700"></i>
+</a>
+<a href="https://www.youtube.com/@LM3700/videos" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-youtube-fill ri-lg text-gray-700"></i>
+</a>
+<a href="https://www.instagram.com/lm37001/profilecard/?igsh=MW10em9nbnk3NjNtdw%3D%3D" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-instagram-fill ri-lg text-gray-700"></i>
+</a>
+<a href="https://kick.com/lm3700" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-kickstarter-fill ri-lg text-gray-700"></i>
+<a href="https://www.twitch.tv/lm370" target="_blank" class="social-icon w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-twitch-fill ri-lg text-gray-700"></i>
+</a>
+</div>
+</section>
+<footer class="text-center text-gray-500 text-sm mt-10">
+<p>© 2025 موقع LM1 - جميع الحقوق محفوظة</p>
+</footer>
+</div>
 </body>
 </html>
